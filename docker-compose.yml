@@ -1,0 +1,42 @@
+version: '1.6'
+
+services:
+
+  db:
+    image: postgres
+    environment:
+      PGDATABASE: ${PGDATABASE}
+      PGUSER: ${PGUSER}
+      PGPASSWORD: ${PGPASSWORD}
+      PGHOST: ${PGHOST}
+      PGPORT: ${PGPORT}
+
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      ENDPOINT_ID: ${ENDPOINT_ID}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+    volumes:
+      - /api_server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+
+
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - backend
+
+volumes:
+  postgres_data:
+
