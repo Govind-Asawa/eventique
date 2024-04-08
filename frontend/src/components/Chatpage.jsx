@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Helmet } from "react-helmet";
 import { Text, Img, Input, Heading, Button } from "/Users/ushachandrashekar/Desktop/eventique/frontend/src/Styling";
 import { MenuItem, Menu, Sidebar } from "react-pro-sidebar";
@@ -11,14 +11,15 @@ import Navbar from './Navbar';
 import { apiEndpoints } from '../utils/apiEndpoints';
 
 export default function HomeEventiquechatdisplayPage() {
-  const [collapsed, setCollapsed] = React.useState(false);
-  const [inputText, setInputText] = React.useState("");
+  const [collapsed, setCollapsed] = useState(false);
+  const [inputText, setInputText] = useState("");
 
   function collapseSidebar() {
       setCollapsed(!collapsed)
   }
   // Function to handle input text change
   const handleInputChange = (event) => {
+    // console.log(event);
     setInputText(event.target.value);
   };
 
