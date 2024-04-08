@@ -1,0 +1,42 @@
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/OutfitExtraBold.ttf");
+  font-family: "Outfit";
+  font-weight: 800;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/NotoSansRegular.ttf");
+  font-family: "Noto Sans";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/OutfitMedium.ttf");
+  font-family: "Outfit";
+  font-weight: 500;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/NotoSansBold.ttf");
+  font-family: "Noto Sans";
+  font-weight: 700;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/OutfitBold.ttf");
+  font-family: "Outfit";
+  font-weight: 700;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("/public/fonts/NotoSansExtraLight.ttf");
+  font-family: "Noto Sans";
+  font-weight: 200;
+}

@@ -92,3 +92,30 @@ module.exports = {
   },
   plugins: [],
 };
+module.exports = {
+  mode: "jit",
+  content: ["./src/**/**/*.{js,ts,jsx,tsx,html,mdx}", "./src/**/*.{js,ts,jsx,tsx,html,mdx}"],
+  darkMode: "class",
+  theme: {
+    screens: { md: { max: "1050px" }, sm: { max: "550px" } },
+    extend: {
+      colors: {
+        white: { A700: "#ffffff" },
+        gray: { 100: "#f2f0ff", 700: "#565e6c", 900: "#171a1f", "900_7e": "#171a1f7e", "100_01": "#f3f4f6" },
+        deep_purple: { 100: "#d8d2fe" },
+        lime: { A700: "#9bd61d" },
+        blue_gray: { 200: "#bcc1ca" },
+        indigo: { A100: "#8775fd" },
+        black: { 900: "#000000" },
+      },
+      boxShadow: {
+        xs: "0px 3px  6px 0px #120f281e",
+        sm: "0px 8px  17px 0px #9bd61d26",
+        md: "0px 0px  1px 0px #171a1f11",
+      },
+      fontFamily: { outfit: "Outfit", notosans: "Noto Sans" },
+      opacity: { 0.4: 0.4 },
+    },
+  },
+  plugins: [require("@tailwindcss/forms")],
+};
