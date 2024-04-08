@@ -2,8 +2,13 @@ import React from 'react';
 import { CgProfile } from 'react-icons/cg';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { FaPlus } from 'react-icons/fa';
-
-export default function Navbar() {
+import { useHistory, useNavigate } from 'react-router-dom';
+const Navbar = () => {
+    const history = useNavigate(); // Access the history object
+  
+    const handleCreateClick = () => {
+      history.push('/chatpage'); // Redirect to '/chatpage' route
+    };
   return (
     <div className='flex items-center gap-2'>
       <span className='flex-1 text-2xl text-gray-500 font-semibold'>Calendar</span>
@@ -19,4 +24,5 @@ export default function Navbar() {
       </div>
     </div>
   );
-}
+};
+export default Navbar

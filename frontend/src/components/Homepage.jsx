@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+//import "@fullcalendar/react/dist/vdom";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
 import axios from 'axios';
 import moment from 'moment';
@@ -9,11 +10,18 @@ import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 
 import { apiEndpoints } from '../utils/apiEndpoints';
+import { Navigate, useNavigate } from 'react-router-dom';
+
 
 const aspectRatio = window.screen.width/window.screen.height;
 
 function Homepage() {
   const [tasks, setTasks] = useState([])
+  const history = useNavigate(); // Access the history object
+
+  const handleCreateClick = () => {
+    history.push('/chatpage'); // Redirect to '/chatpage' route
+  };
 
   const fetchAndRenderTasks = async (dateInfo) => {
     const start = moment(dateInfo.start).toISOString()
@@ -47,7 +55,7 @@ function Homepage() {
       <div className='flex'>
         <Sidebar />
         <div className='flex-1 h-full flex flex-col px-4 py-2 gap-4'>
-          <Navbar/>
+        <Navbar onCreateClick={handleCreateClick} /> 
           <div className=''>
             <FullCalendar
             events={tasks} //adds tasks to calendar
@@ -66,6 +74,5 @@ function Homepage() {
         </div>
       </div>
   );
-}
-
+ }
 export default Homepage;
