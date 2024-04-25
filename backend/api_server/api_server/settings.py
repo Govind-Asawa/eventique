@@ -237,6 +237,7 @@ ALLOWED_HOSTS = json.loads(getenv("ALLOWED_HOST", ["127.0.0.1"]))
 CORS_ALLOWED_ORIGINS = json.loads(getenv("TRUSTED_ORIGIN", ["http://127.0.0.1"]))
 CSRF_TRUSTED_ORIGINS = json.loads(getenv('TRUSTED_ORIGIN', ['http://127.0.0.1']))
 
-# CORS_ORIGIN_ALLOW_ALL = True
+
 
 CORS_ORIGIN_WHITELIST = json.loads(getenv("TRUSTED_ORIGIN", ["http://localhost:3000"]))
+CORS_ORIGIN_ALLOW_ALL = True

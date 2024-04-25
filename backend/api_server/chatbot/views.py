@@ -6,6 +6,9 @@ from django.utils.dateparse import parse_datetime
 from .models import Event, Task
 from django.contrib.auth.decorators import login_required
 from api_server.settings import model, MAX_OUTPUT_TOKENS
+from django.views.decorators.csrf import csrf_exempt, csrf_protect
+
+
 
 @require_http_methods(["GET"])
 def status_check(request):
@@ -99,7 +102,7 @@ def generate_plan(request):
         return JsonResponse({'error': str(e)}, status=500)
 
 
-
+@csrf_exempt
 @require_http_methods(["POST"])
 def finalize_plan(request):
     """This function is used to finalize a Plan for an Event.
