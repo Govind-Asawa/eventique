@@ -11,13 +11,13 @@ RUN pip install --no-cache-dir --disable-pip-version-check --requirement require
 RUN pip freeze
 
 # Mounts the application code to the image
-COPY . code
-WORKDIR /code
+COPY . backend
+WORKDIR /backend
 
-EXPOSE 8080
+EXPOSE 8000
 
 # runs the production server
 ENTRYPOINT ["python", "api_server/manage.py"]
-CMD ["runserver", "0.0.0.0:8080"]
+CMD ["runserver", "0.0.0.0:8000"]
 # CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "api_server.wsgi:application"]
 # TODO- Need to run using gunicorn

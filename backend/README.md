@@ -126,3 +126,13 @@ docker tag eventique-backend regostar/eventique-backend
 https://medium.com/@roman.njoroge_90440/google-gemini-tutorial-how-to-build-a-chat-app-with-characters-from-your-favorite-show-a8c0efd732ef
 
 - test deploy
+
+===================
+
+docker compose build
+
+docker compose up
+
+docker tag eventique-api-1 us-south1-docker.pkg.dev/bamboo-theorem-415222/full/eventique
+
+docker push us-south1-docker.pkg.dev/bamboo-theorem-415222/full/eventique
